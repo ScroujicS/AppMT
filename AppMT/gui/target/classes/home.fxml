@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.MT.gui.Controller">
+   <children>
+      <BorderPane layoutX="100.0" layoutY="100.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <center>
+            <VBox maxHeight="270.0" maxWidth="350.0" minHeight="200.0" minWidth="170.0" prefHeight="270.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="pane" maxHeight="152.0" maxWidth="170.0" prefHeight="152.0" prefWidth="170.0" style="-fx-background-color: #EEEEEE;">
+                     <children>
+                        <ImageView fx:id="input" fitHeight="90.0" fitWidth="90.0" layoutX="40.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@input.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="inputActive" fitHeight="68.0" fitWidth="74.0" layoutX="50.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@inputActive.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="inputText" fill="#6b6b6b" layoutX="10.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите или перетащите xlsx файл" textAlignment="CENTER" wrappingWidth="149.68231201171875" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="90.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane prefHeight="47.0" prefWidth="350.0" />
+                  <HBox prefHeight="25.0" prefWidth="159.0">
+                     <children>
+                        <ImageView fx:id="downloadButtonTrue" fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@downloadTrue.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="80.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fx:id="fileName" strokeType="OUTSIDE" strokeWidth="0.0" text="exsel.xmlx" visible="false" wrappingWidth="283.31834411621094">
+                           <HBox.margin>
+                              <Insets top="4.0" />
+                           </HBox.margin></Text>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="45.0" prefWidth="350.0" />
+                  <HBox maxHeight="100.0" maxWidth="350.0" minHeight="30.0" minWidth="375.0" prefHeight="30.0" prefWidth="375.0">
+                     <children>
+                        <RadioButton fx:id="driving" focusTraversable="false" mnemonicParsing="false" onAction="#drivingActivate" text="Автомобиль">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="truck" focusTraversable="false" mnemonicParsing="false" onAction="#truckActivate" text="Грузовик">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="transit" focusTraversable="false" mnemonicParsing="false" onAction="#transitActivate" text="Транзит">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="walking" focusTraversable="false" mnemonicParsing="false" onAction="#walkingActivate" text="Пешеход">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="100.0" />
+                     </padding>
+                  </HBox>
+                  <Pane prefHeight="0.0" prefWidth="200.0" />
+                  <CheckBox fx:id="avoidTolls" focusTraversable="false" mnemonicParsing="false" onAction="#avoidTollsOnAction" prefHeight="17.0" prefWidth="160.0" selected="true" text="Избегать платных дорог">
+                     <VBox.margin>
+                        <Insets left="95.0" right="95.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <Pane prefHeight="46.0" prefWidth="350.0" />
+                  <Pane prefHeight="69.0" prefWidth="350.0">
+                     <children>
+                        <Button focusTraversable="false" layoutX="100.0" layoutY="3.0" mnemonicParsing="false" onAction="#importFile" prefHeight="25.0" prefWidth="150.0" text="Импортировать" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="49.0" prefWidth="350.0" />
+                  <Pane prefHeight="67.0" prefWidth="350.0">
+                     <children>
+                        <ProgressBar fx:id="progressBar" layoutY="3.0" prefHeight="22.0" prefWidth="350.0" progress="0.0" visible="false" />
+                        <Button fx:id="open" focusTraversable="false" layoutX="100.0" layoutY="2.0" mnemonicParsing="false" onAction="#downloadProcessedFile" prefHeight="25.0" prefWidth="150.0" text="Открыть файл" visible="false" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <AnchorPane prefWidth="100.0" style="-fx-background-color: #696969;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button fx:id="homeButton" focusTraversable="false" layoutX="12.5" layoutY="15.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="settingButton" focusTraversable="false" layoutX="12.5" layoutY="105.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="infoButton" focusTraversable="false" layoutX="12.5" layoutY="195.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@info.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="1.0" minHeight="100.0" minWidth="200.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="142.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Матрица расстояний" textAlignment="CENTER" wrappingWidth="300.0" AnchorPane.leftAnchor="200.0">
+               <font>
+                  <Font name="Yu Gothic UI Regular" size="24.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+            </Text>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

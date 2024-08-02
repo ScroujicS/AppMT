@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.MT.gui.Controller">
+   <children>
+      <AnchorPane prefWidth="100.0" style="-fx-background-color: #696969;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button fx:id="homeButton" focusTraversable="false" layoutX="12.5" layoutY="15.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="settingButton" focusTraversable="false" layoutX="12.5" layoutY="105.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="infoButton" focusTraversable="false" layoutX="12.5" layoutY="195.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="75.0" prefWidth="75.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@info.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="1.0" minHeight="100.0" minWidth="200.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="203.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Настройки приложения" textAlignment="CENTER" wrappingWidth="300.0" AnchorPane.leftAnchor="200.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+            </Text>
+         </children></AnchorPane>
+      <BorderPane layoutX="100.0" layoutY="100.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <center>
+            <Pane maxHeight="200.0" maxWidth="400.0" minHeight="200.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </BorderPane.margin>
+               <children>
+                  <TextField fx:id="keyInput" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="323.0" />
+                  <Text layoutX="14.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Текущий ключ:">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <font>
+                        <Font size="14.0" />
+                     </font></Text>
+                  <Text fx:id="keyActive" fill="#208411" layoutX="118.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect></Text>
+                  <Button layoutX="340.0" layoutY="39.0" mnemonicParsing="false" onAction="#activateKey" text="Активировать" />
+                  <Text fx:id="text" fill="#9d9d9d" layoutX="21.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите новый ключ" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
